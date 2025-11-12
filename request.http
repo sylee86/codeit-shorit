@@ -1,0 +1,111 @@
+POST  http://localhost:3000/api/short-links
+Content-Type: application/json
+
+{
+  "title" : "codeit",
+  "url" : "https://codeit.kr"
+}
+
+###
+
+GET  http://localhost:3000/api/short-links/6913e6d1cfa852359f8711dc
+
+###
+
+GET  http://localhost:3000/api/short-links/
+
+
+###
+
+PATCH   http://localhost:3000/api/short-links/69134dd7d68e5e1f7cd8908d
+Content-Type: application/json
+
+{
+  "title" : "codeit-EDIT1",
+  "url" : "https://codeit.kr"
+}
+###
+
+DELETE    http://localhost:3000/api/short-links/6913e6d1cfa852359f8711dc
+
+###
+
+GET http://localhost:3000/api/short-links/123
+
+###
+
+GET http://localhost:3000/api/short-links/123?q=codeit
+
+###
+
+POST http://localhost:3000/api/short-links/123
+Content-Type: application/json
+
+{
+  "title" : "codeit"
+}
+
+
+###
+
+GET http://localhost:3000/api/short-links/123
+Cookie: session-id=codeit1234
+
+### //qrcodes/
+
+
+GET http://localhost:3000/api/qrcodes
+
+###
+GET http://localhost:3000/api/qrcodes/6913e952cfa852359f8711e4
+
+###
+DELETE  http://localhost:3000/api/qrcodes/6913e955cfa852359f8711e6
+
+###
+POST http://localhost:3000/api/qrcodes
+Content-Type: application/json
+
+{
+  "title": "위키피디아 Next.js2",
+  "url": "https://en.wikipedia.org/wiki/Next.js"
+}
+
+###
+PATCH http://localhost:3000/api/qrcodes/6913e94dcfa852359f8711e2
+Content-Type: application/json
+
+{
+  "title": "위키피디아 Next.js322",
+  "url": "https://en.wikipedia.org/wiki/Next.js"
+}
+
+
+### //qrcodes/codeit
+
+PATCH http://localhost:3000/api/qrcodes/codeit
+Content-Type: application/json
+
+{
+  "title": "위키피디아 Next.js",
+  "url": "https://en.wikipedia.org/wiki/Next.js"
+}
+
+
+###
+
+GET  http://localhost:3000/api/qrcodes/codeit
+
+###
+
+DELETE  http://localhost:3000/api/qrcodes/codeit
+
+###
+
+POST  http://localhost:3000/api/qrcodes/codeit
+Content-Type: application/json
+
+{
+  "title": "위키피디아 Next.js1",
+  "url": "https://en.wikipedia.org/wiki/Next.js"
+}
