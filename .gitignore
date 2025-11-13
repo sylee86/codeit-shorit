@@ -1,1 +1,19 @@
-node_modules
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+
+# next.js
+/.next/
+
+# production
+/build
+
+
+# local env files
+.env*.local
+.env
+
+# vercel
+.vercel

@@ -5,10 +5,11 @@ import Link from "@/components/Link";
 import styles from "@/styles/ShortLinkListPage.module.css";
 import dbConnect from "@/db/dbConnect";
 import ShortLink from "@/db/models/ShortLink";
+import axios from "axios";
+import { useState } from "react";
 
-export async function getServerSideProp() {
+export async function getServerSideProps() {
   await dbConnect();
-
   const shortLinks = await ShortLink.find();
   return {
     props: {
@@ -17,7 +18,12 @@ export async function getServerSideProp() {
   };
 }
 
-export default function ShortLinkListPage({ shortLinks }) {
+export default function ShortLinkListPage({ shortLinks: initialShortLinks }) {
+  const [shortLinks, setShortLinks] = useState(initialShortLinks);
+  async function handleDelete(id) {
+    await axios.delete(`/api/short-links/${id}`);
+    setShortLinks((prev) => prev.filter((shortLink) => shortLink._id !== id));
+  }
   return (
     <>
       <Head>
@@ -30,7 +36,7 @@ export default function ShortLinkListPage({ shortLinks }) {
             새로 만들기
           </Button>
         </header>
-        {/* <ShortLinkList items={shortLinks} /> */}
+        <ShortLinkList items={shortLinks} onDelete={handleDelete} />
       </div>
     </>
   );
