@@ -2,9 +2,10 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/qrcodes": "pages/qrcodes.js",
+  "/api/short-links": "pages/api/short-links.js",
   "/qrcodes/new": "pages/qrcodes/new.js",
-  "/qrcodes/[id]": "pages/qrcodes/[id].js",
-  "/api/qrcodes": "pages/api/qrcodes.js",
-  "/api/qrcodes/[id]": "pages/api/qrcodes/[id].js"
+  "/short-links/new": "pages/short-links/new.js",
+  "/qrcodes": "pages/qrcodes.js",
+  "/short-links": "pages/short-links.js",
+  "/api/qrcodes": "pages/api/qrcodes.js"
 }
